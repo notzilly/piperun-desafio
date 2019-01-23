@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="btn-wrapper">
-      <router-link to="/atividades/criar" class="btn btn-success">Nova</router-link>
+      <router-link to="/atividades/criar" class="btn btn-default">Nova</router-link>
     </div>
     <table class="table table-striped">
       <thead>

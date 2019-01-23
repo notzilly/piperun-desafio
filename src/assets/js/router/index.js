@@ -4,6 +4,7 @@ import Login from '@/assets/js/components/Login'
 import Home from '@/assets/js/components/Home'
 import ActivitiesMain from '@/assets/js/components/activities/Main'
 import ActivitiesList from '@/assets/js/components/activities/List'
+import ActivitiesNew from '@/assets/js/components/activities/New'
 
 Vue.use(Router)
 
@@ -24,7 +25,6 @@ export default new Router({
     },
     {
       path: '/atividades',
-      name: 'Atividades',
       component: ActivitiesMain,
       meta: {
         requiresAuth: true
@@ -34,10 +34,10 @@ export default new Router({
           path: '/',
           component: ActivitiesList
         },
-        // {
-        //   path: 'criar',
-        //   component: NewActivity
-        // },
+        {
+          path: 'criar',
+          component: ActivitiesNew
+        },
         // {
         //   path: ':id',
         //   component: Activity

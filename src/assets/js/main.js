@@ -14,7 +14,6 @@ const store = new Vuex.Store(Store)
 
 initialize(store, router);
 
-/* eslint-disable no-new */
 new Vue({
   el: '#app',
   router,
