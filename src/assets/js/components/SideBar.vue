@@ -6,14 +6,25 @@
       <li><a href="#">Empresas</a></li>
       <li><a href="#">Pessoas</a></li>
       <li><a href="#">Dashboard</a></li>
-      <li><a href="#">Logout</a></li>
+      <li><a href="#!" @click.prevent="logout">Logout</a></li>
     </ul>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'SideBar'
+  name: 'SideBar',
+  methods: {
+    logout() {
+      this.$store.commit('logout');
+      this.$router.push('/login');
+    }
+  },
+  computed: {
+    currentUser() {
+      return this.$store.getters.currentUser;
+    }
+  }
 }
 </script>
 

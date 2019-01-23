@@ -2,7 +2,9 @@
   <div id="app">
     <div class="container-fluid">
       <div class="row">
-        <SideBar/>
+        <template v-if="currentUser">
+          <SideBar/>
+        </template>
         <router-view/>
       </div>
     </div>
