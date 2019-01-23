@@ -6,23 +6,13 @@ import Vuex from 'vuex'
 import App from './components/App'
 import router from './router'
 import Store from './store'
+import {initialize} from './helpers/setup'
 
 Vue.config.productionTip = false
 Vue.use(Vuex)
 const store = new Vuex.Store(Store)
 
-router.beforeEach((to, from, next) => {
-  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
-  const currentUser = store.state.currentUser;
-
-  if(requiresAuth && !currentUser) {
-    next('/login');
-  } else if(to.path == '/login' && currentUser) {
-    next('/');
-  } else {
-    next();
-  }
-})
+initialize(store, router);
 
 /* eslint-disable no-new */
 new Vue({
