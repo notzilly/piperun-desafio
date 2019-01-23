@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="btn-wrapper">
+      <router-link to="/atividades/criar" class="btn btn-success">Nova</router-link>
+    </div>
     <table class="table table-striped">
       <thead>
         <th>Título</th>
@@ -21,7 +24,7 @@
             <td>{{ activity.activity_type }}</td>
             <td>{{ activity.status }}</td>
             <td>
-              <router-link :to="`/activities/${activity.id}`">Editar</router-link>
+              <router-link :to="`/atividades/${activity.id}`">Editar</router-link>
             </td>
           </tr>
         </template>
@@ -45,7 +48,14 @@
 </script>
 
 <style scoped>
+  .btn-wrapper {
+    text-align: left;
+    margin-bottom: 20px;
+  }
   tr > td {
     color: #3598dc;
+  }
+  tr:nth-of-type(2n) > td {
+    background-color: aliceblue
   }
 </style>
