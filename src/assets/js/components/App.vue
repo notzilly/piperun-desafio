@@ -19,3 +19,10 @@ export default {
 </script>
 
 <style src="../../sass/app.scss" lang="sass"></style>
+<style>
+  body {
+		color: #fff;
+		background: #3598dc;
+	}
+</style>
+
