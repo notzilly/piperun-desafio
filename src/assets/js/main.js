@@ -1,5 +1,6 @@
-// The Vue build version to load with the `import` command
-// (runtime-only or standalone) has been set in webpack.base.conf with an alias.
+window.axios = require('axios');
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
 import Vue from 'vue'
 import Vuex from 'vuex'
 import App from './components/App'
@@ -9,6 +10,19 @@ import Store from './store'
 Vue.config.productionTip = false
 Vue.use(Vuex)
 const store = new Vuex.Store(Store)
+
+router.beforeEach((to, from, next) => {
+  const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+  const currentUser = store.state.currentUser;
+
+  if(requiresAuth && !currentUser) {
+    next('/login');
+  } else if(to.path == '/login' && currentUser) {
+    next('/');
+  } else {
+    next();
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

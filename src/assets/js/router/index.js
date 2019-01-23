@@ -9,13 +9,16 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Login',
-      component: Login
+      name: 'Dashboard',
+      component: SideBar,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
-      path: '/index',
-      name: 'Index',
-      component: SideBar
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })
