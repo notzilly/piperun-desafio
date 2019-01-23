@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SideBar from './components/SideBar.vue';
+import SideBar from './SideBar.vue';
 
 export default {
   name: 'App',
@@ -18,4 +18,4 @@ export default {
 }
 </script>
 
-<style src="./assets/sass/app.scss" lang="sass"></style>
+<style src="../../sass/app.scss" lang="sass"></style>

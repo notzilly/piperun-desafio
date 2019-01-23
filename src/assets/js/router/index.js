@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
-import SideBar from '@/components/SideBar'
+import HelloWorld from '@/assets/js/components/HelloWorld'
+import SideBar from '@/assets/js/components/SideBar'
 
 Vue.use(Router)
 
