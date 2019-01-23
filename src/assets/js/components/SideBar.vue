@@ -1,8 +1,10 @@
 <template>
   <div class="col-sm-3 col-md-2 sidebar">
     <ul class="nav nav-sidebar">
-      <li class="active"><a href="#">Pipeline</a></li>
-      <li><a href="#">Atividades</a></li>
+      <li><a href="#">Pipeline</a></li>
+      <router-link tag="li" to="/atividades">
+        <a>Atividades</a>
+      </router-link>
       <li><a href="#">Empresas</a></li>
       <li><a href="#">Pessoas</a></li>
       <li><a href="#">Dashboard</a></li>
@@ -48,22 +50,5 @@ export default {
   .nav-sidebar > li > a {
     padding-right: 20px;
     padding-left: 20px;
-  }
-
-  /*
-  * Main content
-  */
-
-  .main {
-    padding: 20px;
-  }
-  @media (min-width: 768px) {
-    .main {
-      padding-right: 40px;
-      padding-left: 40px;
-    }
-  }
-  .main .page-header {
-    margin-top: 0;
   }
 </style>
