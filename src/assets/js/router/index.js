@@ -37,11 +37,7 @@ export default new Router({
         {
           path: 'criar',
           component: ActivitiesNew
-        },
-        // {
-        //   path: ':id',
-        //   component: Activity
-        // }
+        }
       ]
     }
   ]

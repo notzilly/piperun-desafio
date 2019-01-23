@@ -24,7 +24,8 @@
             <td>{{ activity.activity_type }}</td>
             <td>{{ activity.status }}</td>
             <td>
-              <router-link :to="`/atividades/${activity.id}`">Editar</router-link>
+              <!-- <router-link :to="`/atividades/editar/${activity.id}`">Editar</router-link> -->
+              <a href="#">Editar</a>
             </td>
           </tr>
         </template>
@@ -51,11 +52,5 @@
   .btn-wrapper {
     text-align: left;
     margin-bottom: 20px;
-  }
-  tr > td {
-    color: #3598dc;
-  }
-  tr:nth-of-type(2n) > td {
-    background-color: aliceblue
   }
 </style>
