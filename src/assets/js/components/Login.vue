@@ -37,11 +37,11 @@ export default {
 
       login(this.$data.form)
         .then((res) => {
-          this.$store.commit('login_success', res);
+          this.$store.commit('loginSuccess', res);
           this.$router.push({path: '/'});
         })
         .catch((err) => {
-          this.$store.commit('login_failed', {err});
+          this.$store.commit('loginFailed', {err});
         })
     }
   }
