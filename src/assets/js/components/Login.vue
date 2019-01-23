@@ -1,30 +1,25 @@
 <template>
-<div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-  <div class="login-form">
-    <form action="/examples/actions/confirmation.php" method="post">
+  <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+    <div class="login-form">
+      <form action="/examples/actions/confirmation.php" method="post">
         <h2 class="text-center">Login</h2>   
-        <div class="form-group has-error">
-        	<input type="text" class="form-control" name="username" placeholder="Username" required="required">
+        <div class="form-group">
+          <input type="text" class="form-control" name="email" placeholder="Email" required="required">
         </div>
-		<div class="form-group">
-            <input type="password" class="form-control" name="password" placeholder="Password" required="required">
+        <div class="form-group">
+          <input type="password" class="form-control" name="password" placeholder="Senha" required="required">
         </div>        
         <div class="form-group">
-            <button type="submit" class="btn btn-primary btn-lg btn-block">Sign in</button>
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
         </div>
-    </form>
-</div>
-</div>
+      </form>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to Your Vue.js App'
-    }
-  }
+  name: 'Login'
 }
 </script>
 
