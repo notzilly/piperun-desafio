@@ -4,10 +4,10 @@
       <form action="/examples/actions/confirmation.php" method="post">
         <h2 class="text-center">Login</h2>   
         <div class="form-group">
-          <input type="text" class="form-control" name="email" placeholder="Email" required="required">
+          <input type="text" class="form-control" name="email" placeholder="Email" required="required" v-model="form.email">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" name="password" placeholder="Senha" required="required">
+          <input type="password" class="form-control" name="password" placeholder="Senha" required="required" v-model="form.password">
         </div>        
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
@@ -18,8 +18,33 @@
 </template>
 
 <script>
+import {login} from '../helpers/auth';
+
 export default {
-  name: 'Login'
+  name: 'Login',
+  data() {
+    return {
+      form: {
+        email: '',
+        password: ''
+      },
+      error: null
+    };
+  },
+  methods: {
+    authenticate() {
+      this.$store.dispatch('login');
+
+      login(this.$data.form)
+        .then((res) => {
+          this.$store.commit('login_success', res);
+          this.$router.push({path: '/'});
+        })
+        .catch((err) => {
+          this.$store.commit('login_failed', {err});
+        })
+    }
+  }
 }
 </script>
 
