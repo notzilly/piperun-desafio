@@ -26,6 +26,7 @@
             <td>
               <!-- <router-link :to="`/atividades/editar/${activity.id}`">Editar</router-link> -->
               <a href="#">Editar</a>
+              <a href="#">Excluir</a>
             </td>
           </tr>
         </template>
