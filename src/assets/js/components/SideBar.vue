@@ -19,11 +19,6 @@ export default {
       this.$store.commit('logout');
       this.$router.push('/login');
     }
-  },
-  computed: {
-    currentUser() {
-      return this.$store.getters.currentUser;
-    }
   }
 }
 </script>

@@ -16,7 +16,12 @@ import SideBar from './SideBar.vue';
 
 export default {
   name: 'App',
-  components: {SideBar}
+  components: {SideBar},
+  computed: {
+    currentUser() {
+      return this.$store.getters.currentUser;
+    }
+  }
 }
 </script>
 

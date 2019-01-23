@@ -4,8 +4,8 @@ export function login(credentials) {
             .then((response) => {
                 res(response.data);
             })
-            .catch((err) => {
-                rej('Error');
+            .catch((error) => {
+                rej('Erro de autenticação');
             })
     })
 }

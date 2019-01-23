@@ -12,6 +12,11 @@
         <div class="form-group">
           <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
         </div>
+        <template v-if="authError">
+          <p class="error">
+            {{ authError }}
+          </p>
+        </template>
       </form>
     </div>
   </div>
@@ -40,9 +45,14 @@ export default {
           this.$store.commit('loginSuccess', res);
           this.$router.push({path: '/'});
         })
-        .catch((err) => {
-          this.$store.commit('loginFailed', {err});
+        .catch((error) => {
+          this.$store.commit('loginFailed', {error});
         })
+    }
+  },
+  computed: {
+    authError() {
+      return this.$store.getters.authError;
     }
   }
 }
@@ -100,5 +110,9 @@ export default {
 	}
 	.login-form form a:hover {
 		text-decoration: underline;
-	}
+  }
+  .error {
+    text-align: center;
+    color: red;
+  }
 </style>
