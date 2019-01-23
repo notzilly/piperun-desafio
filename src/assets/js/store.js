@@ -48,11 +48,24 @@ export default {
             localStorage.removeItem('user');
             state.isLoggedIn = false;
             state.currentUser = null;
+        },
+        updateActivities(state, payload) {
+            state.activities = payload;
         }
     },
     actions: {
         login(context) {
             context.commit('login');
-        }
+        },
+        getActivities(context) {
+            axios.get('https://api.pipe.run/v1/activities', {
+                headers: {
+                    "Token": context.state.currentUser.token
+                }
+            })
+            .then((response) => {
+                context.commit('updateActivities', response.data.data)
+            })
+        },
     }
 }

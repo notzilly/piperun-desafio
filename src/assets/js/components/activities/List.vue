@@ -32,10 +32,20 @@
 
 <script>
   export default {
-    name: 'ActivitiesList'
+    name: 'ActivitiesList',
+    mounted() {
+      this.$store.dispatch('getActivities');
+    },
+    computed: {
+      activities() {
+        return this.$store.getters.activities;
+      }
+    }
   }
 </script>
 
-
 <style scoped>
+  tr > td {
+    color: #3598dc;
+  }
 </style>
